@@ -602,8 +602,8 @@ function WebRTCAdaptor(initialValues)
 		thiz.publishMode = "screen";
 
 		var audioConstraint = false;
-		if (typeof mediaConstraints.audio != "undefined" && mediaConstraints.audio != false) {
-			audioConstraint = mediaConstraints.audio;
+		if (typeof thiz.mediaConstraints.audio != "undefined" && thiz.mediaConstraints.audio != false) {
+			audioConstraint = thiz.mediaConstraints.audio;
 		}
 
 		thiz.getUserMedia(thiz.mediaConstraints, audioConstraint);
@@ -615,10 +615,10 @@ function WebRTCAdaptor(initialValues)
 		thiz.publishMode = "screen+camera";
 
 		var audioConstraint = false;
-		if (typeof mediaConstraints.audio != "undefined" && mediaConstraints.audio != false) {
-			audioConstraint = mediaConstraints.audio;
+		if (typeof thiz.mediaConstraints.audio != "undefined" && thiz.mediaConstraints.audio != false) {
+			audioConstraint = thiz.mediaConstraints.audio;
 		}
-		thiz.getUserMedia(mediaConstraints, audioConstraint);
+		thiz.getUserMedia(thiz.mediaConstraints, audioConstraint);
 	}
 
 	thiz.arrangeStreams = function(stream, onEndedCallback, stopDesktop) {
